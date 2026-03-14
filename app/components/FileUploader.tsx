@@ -31,13 +31,14 @@ const FileUploader = ({onFileSelect} : FileUploaderProps) => {
             <img src="/icons/info.svg" alt="upload" className="size-20" />
           </div>
           {file ? (
-            <div className="text-center">
-              <p className="text-lg text-gray-700 font-medium truncate">
-                {file.name}
-              </p>
-              <p className="text-sm text-gray-500">
-                {formatSize(file.size)}
-              </p>
+            <div className="flex items-center space-x-3">
+              <img src="/images/pdf.png" alt="pdf" className="size-10" />
+              <div>
+                <p className="text-sm text-gray-700 font-medium truncate">
+                  {file.name}
+                </p>
+                <p className="text-sm text-gray-500">{formatSize(file.size)}</p>
+              </div>
             </div>
           ) : (
             <div>
@@ -46,7 +47,7 @@ const FileUploader = ({onFileSelect} : FileUploaderProps) => {
                 and drop
               </p>
               <p className="text-lg text-gray-500">
-                  PDF(max {formatSize(maxFileSize)})
+                PDF(max {formatSize(maxFileSize)})
               </p>
             </div>
           )}
